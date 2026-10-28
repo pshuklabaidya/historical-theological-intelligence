@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local runtime / generated state
+WORK-STATE/
+worktree/
+runtime/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Development and validation handoffs
+*Resume-Snapshot*.zip
+*Work-Input*.zip
+*All-Exports*.zip
+*ALL-EXPORTS*.zip
+*Automated-Input*.zip
+*Live-Validation*.zip
+*Acceptance-Automated*.zip
+*Handoff*.zip
+
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
