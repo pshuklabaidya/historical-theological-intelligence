@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "dist/historical-theological-intelligence-v0.3-native-authoring-transaction-candidate.zip"
+      - ".github/workflows/unpack-production-candidate.yml"
 
 permissions:
   contents: write
@@ -44,13 +45,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- skill/historical-theological-intelligence &&              git diff --cached --quiet -- skill/historical-theological-intelligence; then
+          git add skill/historical-theological-intelligence
+
+          if git diff --cached --quiet -- skill/historical-theological-intelligence; then
             echo "No production-source changes."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add skill/historical-theological-intelligence
           git commit -m "Publish HTI v0.3 production candidate source"
           git push
