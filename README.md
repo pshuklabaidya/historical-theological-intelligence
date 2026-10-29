@@ -117,16 +117,40 @@ flowchart TB
     V -. "reject invalid state" .-> T
 ```
 
-The historical-intelligence objects form a second, domain-level architecture inside that system:
+The core historical-intelligence analytical spine is:
 
 ```mermaid
 flowchart LR
-    S["Source / page / text"] --> A["Argument Dossier"]
-    A --> P["Proposition-Relation Graph"]
-    P --> H["Historical Relation Graph"]
+
+    SR["Source representation"]
+    AD["Argument Dossier"]
+    PRG["Proposition-Relation Graph"]
+    HRG["Historical Relation Graph"]
+
+    DWG["Dynamic Witness Graph<br/>textual relations"]
+    CONF["Confessional / Creedal Tracing"]
+
+    EA["Evidence Ancestry"]
+    UNC["Dependency-Sensitive Uncertainty"]
+
+    SR --> AD
+    AD --> PRG
+    PRG --> HRG
+
+    SR <--> DWG
+
+    PRG --> CONF
+    HRG --> CONF
+
+    EA -. governs .-> AD
+    EA -. governs .-> PRG
+    EA -. governs .-> HRG
+
+    UNC -. propagates through .-> PRG
+    UNC -. propagates through .-> HRG
 ```
 
-The textual witness graph remains separate from the historical relation graph so that textual dependence and intellectual dependence are not conflated.
+This preserves the governing HTI flow - source to Argument Dossier to Proposition-Relation Graph to Historical Relation Graph - while showing the cross-cutting structures that make the domain model non-linear. The Dynamic Witness Graph remains separate from the Historical Relation Graph so that textual-witness relations are not conflated with intellectual-historical relations. Evidence ancestry governs downstream claims, dependency-sensitive uncertainty propagates through the proposition and historical relation structures, and confessional-creedal tracing draws on both argument and historical relation analysis without being treated as evidence of historical dependence.
 
 This separation of responsibilities is deliberate: Claude handles interpretation and scholarly judgment, while Python tooling handles state isolation, construction, serialization, validation, checksums, preflight, and completion receipts. The publication boundary prevents unvalidated state from becoming the final user-facing response.
 
