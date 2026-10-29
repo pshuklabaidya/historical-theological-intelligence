@@ -36,19 +36,88 @@ A model can sound convincing while silently collapsing those distinctions. HTI t
 
 ## System architecture
 
+HTI is not a linear prompt pipeline. Claude operates as the reasoning layer inside a governed architecture. The kernel and capability modules orchestrate the work, typed state preserves evidence and provenance, and deterministic Python tooling controls the mechanical path from native objects to valid publication.
+
 ```mermaid
-flowchart LR
-    A["Natural-language request"] --> B["Routing / operation selection"]
-    B --> C["HTI kernel"]
-    C --> D["Capability modules"]
-    D --> E["Typed evidence + task state"]
-    E --> F["Native authoring transaction"]
-    F --> G["Validation + preflight"]
-    G --> H["Deterministic publication"]
-    H --> I["Auditable user response"]
+flowchart TB
+
+    U["Natural-language request"]
+
+    subgraph ORCH["HTI orchestration layer"]
+        R["Intent routing + operation composition"]
+        K["HTI kernel"]
+        M["8 capability modules"]
+        R --> K
+        K <--> M
+    end
+
+    subgraph CLAUDE["Claude reasoning plane"]
+        C1["Source interpretation"]
+        C2["Proposition + argument reconstruction"]
+        C3["Historical relation assessment"]
+        C4["Uncertainty + counterevidence"]
+        C5["Response synthesis"]
+    end
+
+    subgraph STATE["Typed state + knowledge layer"]
+        T["Task state"]
+        E["Evidence + provenance"]
+        S["Source representations"]
+        P["Proposition-Relation Graph"]
+        H["Historical Relation Graph"]
+        W["Witness + work state"]
+    end
+
+    subgraph CONTROL["Deterministic Python control plane"]
+        N["Native constructors"]
+        B["Bindings + serialization"]
+        V["Validation + preflight"]
+        I["Integrity + checksums"]
+        C["Completion receipts"]
+        N --> B
+        B --> V
+        V --> I
+        I --> C
+    end
+
+    PUB["Validated publication"]
+    OUT["Auditable user response"]
+
+    U --> R
+    M <--> C1
+    M <--> C2
+    M <--> C3
+    M <--> C4
+    M <--> C5
+
+    M <--> T
+    M <--> E
+    M <--> S
+    M <--> P
+    M <--> H
+    M <--> W
+
+    C1 <--> S
+    C2 <--> P
+    C3 <--> H
+    C4 <--> E
+    C5 <--> T
+
+    T --> N
+    E --> N
+    S --> N
+    P --> N
+    H --> N
+    W --> N
+    C5 --> N
+
+    C --> PUB
+    PUB --> OUT
+
+    V -. "reject invalid state" .-> T
 ```
 
-The historical-intelligence layer then organizes research around:
+The historical-intelligence objects form a second, domain-level architecture inside that system:
 
 ```mermaid
 flowchart LR
@@ -58,6 +127,8 @@ flowchart LR
 ```
 
 The textual witness graph remains separate from the historical relation graph so that textual dependence and intellectual dependence are not conflated.
+
+This separation of responsibilities is deliberate: Claude handles interpretation and scholarly judgment, while Python tooling handles state isolation, construction, serialization, validation, checksums, preflight, and completion receipts. The publication boundary prevents unvalidated state from becoming the final user-facing response.
 
 ## Operating model
 
