@@ -1,0 +1,56 @@
+name: Unpack HTI production candidate
+
+on:
+  push:
+    paths:
+      - "dist/historical-theological-intelligence-v0.3-native-authoring-transaction-candidate.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify outer candidate identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "283ee82bb5a052e0f6eb51f5341f4621395e4a8cd69d0a15ded28ce0c3259085  dist/historical-theological-intelligence-v0.3-native-authoring-transaction-candidate.zip" | sha256sum -c -
+
+      - name: Extract and verify production tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .candidate-unpack skill/historical-theological-intelligence
+          mkdir -p .candidate-unpack skill
+          unzip -q dist/historical-theological-intelligence-v0.3-native-authoring-transaction-candidate.zip -d .candidate-unpack
+
+          root=".candidate-unpack/historical-theological-intelligence"
+          test -f "$root/SKILL.md"
+          test -f "$root/SHA256SUMS.txt"
+
+          (
+            cd "$root"
+            sha256sum -c SHA256SUMS.txt
+          )
+
+          mv "$root" skill/historical-theological-intelligence
+          rm -rf .candidate-unpack
+
+      - name: Commit production source
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- skill/historical-theological-intelligence &&              git diff --cached --quiet -- skill/historical-theological-intelligence; then
+            echo "No production-source changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add skill/historical-theological-intelligence
+          git commit -m "Publish HTI v0.3 production candidate source"
+          git push
