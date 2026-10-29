@@ -1,0 +1,27 @@
+{
+  "schema_version": "hti-installed-catalog-1",
+  "entries": [
+    {
+      "specialization_id": "vermigli-judges-work",
+      "level": "WORK",
+      "scope": {
+        "work_id": "WORK-VERMIGLI-JUDGES",
+        "edition_id": null,
+        "exemplar_id": null
+      },
+      "manifest_locator": "resources/specializations/vermigli-judges/work-manifest.json",
+      "manifest_sha256": "b92df1b4e70e8c251d2d0b5b941ceee6d8c84025e0c16c04e7c37492d66238e8"
+    },
+    {
+      "specialization_id": "vermigli-judges-1561",
+      "level": "EDITION",
+      "scope": {
+        "work_id": "WORK-VERMIGLI-JUDGES",
+        "edition_id": "EDITION-VERMIGLI-JUDGES-ZURICH-1561",
+        "exemplar_id": null
+      },
+      "manifest_locator": "resources/specializations/vermigli-judges/edition-manifest.json",
+      "manifest_sha256": "1d4a627b4ddcc2984239deadbae609cffa66372d53d61cb19d7bb2be50da72f5"
+    }
+  ]
+}

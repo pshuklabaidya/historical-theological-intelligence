@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.2",
+  "work_id": "WORK-ID",
+  "mode": "ordinary_translation",
+  "identity": {
+    "visible_claim_id": null,
+    "external_verification": "not_applicable"
+  },
+  "translation": {
+    "text": ""
+  },
+  "sections": [],
+  "confidence": null,
+  "entities": [],
+  "publication_contract_sha256": ""
+}

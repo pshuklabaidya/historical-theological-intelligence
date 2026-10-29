@@ -1,0 +1,38 @@
+{
+  "schema_version": "hti-specialization-1",
+  "specialization_id": "vermigli-judges-work",
+  "level": "WORK",
+  "scope": {
+    "work_id": "WORK-VERMIGLI-JUDGES",
+    "edition_id": null,
+    "exemplar_id": null
+  },
+  "required_identity_state": "WORK_ESTABLISHED",
+  "activation_predicates": [
+    "EXACT_WORK"
+  ],
+  "permitted_surfaces": [
+    "witness_relations"
+  ],
+  "resources": [
+    {
+      "resource_id": "historical-translation",
+      "surface": "witness_relations",
+      "locator": "resources/specializations/vermigli-judges/work-witness.json",
+      "sha256": "142065b9357d955173e6acaa1437cd8e86e9196a90aac09ca4fe548cdcf3b8e8"
+    }
+  ],
+  "capabilities": [
+    "READ_LICENSED_STATE",
+    "REVISE_STATE",
+    "EXPORT_STATE"
+  ],
+  "update_rules": {
+    "revision_guard": true,
+    "hard_delete_required": false
+  },
+  "invalidation_dependencies": [],
+  "compatibility": [
+    "hti-specialization-1"
+  ]
+}

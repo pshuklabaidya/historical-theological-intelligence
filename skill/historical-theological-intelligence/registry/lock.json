@@ -1,0 +1,21 @@
+{
+  "schema_version": "hti-capability-lock-1",
+  "candidate_version": "0.3-composable-operational-convergence.1",
+  "files": {
+    "capabilities.json": "9a2b2d2cf1f6addd63b89a98868ebf6bc42f352e02e060c947cb3796b9d7161d",
+    "contracts/argument.json": "e1640b6655c5bb9236c3276b447d6d650823c6c11ccc6a28d69a9ac08e00ac51",
+    "contracts/confessional.json": "083db8b9f488cc5040a5e615d47b4609999d1deefeb635d3e41f8ffea051725f",
+    "contracts/corpus.json": "8735b99d04233345f48050790cd764f67558acece558838940f3376a62501a5e",
+    "contracts/explanation.json": "d1230ff0e4f09b8fab3e1f0bb6f94b125de165444c1a56c33b8cf82dfdb1800f",
+    "contracts/historical.json": "94bd299e3aee4b03cde269d7b01ea2d4dd556c4545938b15fc412bcece804778",
+    "contracts/kernel.json": "964062541621c75707edee39018cb3ddae4730322b92ce4f41b44379fa73cf9c",
+    "contracts/library.json": "46d49dfd80201b792b645b9c5c8bec8b923fe1a3bf60b16b141d309a488ee538",
+    "contracts/sources.json": "e27a15dac9be2d60f3085514d1c7cb050eb043cc35dbd44d858b797aaec2d513",
+    "contracts/textual.json": "d997a46b403df7c6d437a6638864bd636098016fc69f9a04f0c9c10deea9b7b9",
+    "schema.json": "e5b16141e7289dc8ec81aa29aeb482bcee1a5d2b8bf27b00d44eaeab1af6f436",
+    "ownership.json": "31d6497bbc63eeabaa239bc0878f24a4b56fc440ce344d344706c64bfc202a68"
+  },
+  "baseline_manifest_sha256": "96726b1e15e60911fa64aa44bcf49938a1f8415ebaef93710f6bdefbf08db724",
+  "stage": "ONE_SKILL_ASSEMBLY",
+  "package_manifest_binding": "EXTERNAL_IN_PUBLICATION_COMPOSITION"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "hti-specialization-1",
+  "registry_id": "REGISTRY-ID",
+  "namespace": "PRIVATE-NAMESPACE",
+  "account_scope": "ACCOUNT-SCOPE",
+  "revision": 1,
+  "state_version": 1,
+  "storage_binding": null,
+  "anchors": {},
+  "records": {},
+  "audit": []
+}

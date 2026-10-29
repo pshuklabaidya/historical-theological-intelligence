@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "loci": [
+    {"locus_id": "trinity", "label": "Trinity", "aliases": ["triunity", "Godhead"], "description": "Bounded propositions concerning the one God and the Father, Son, and Holy Spirit.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "christology", "label": "Christology", "aliases": ["person and natures of Christ"], "description": "Bounded propositions concerning the person, natures, offices, and work of Christ.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "covenant", "label": "Covenant", "aliases": ["federal theology"], "description": "Bounded propositions concerning divine covenants and their theological functions.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "justification", "label": "Justification", "aliases": ["justification by faith"], "description": "Bounded propositions concerning the declarative saving act and its ground and instrument.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "sacraments", "label": "Sacraments", "aliases": ["sacramental theology"], "description": "Bounded propositions concerning baptism, the supper, and sacramental signs and seals.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "law", "label": "Law", "aliases": ["moral law", "law of God"], "description": "Bounded propositions concerning divine law, its uses, scope, and relation to the gospel.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "providence", "label": "Providence", "aliases": ["divine providence"], "description": "Bounded propositions concerning divine preservation, concurrence, and government.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}},
+    {"locus_id": "ecclesiology", "label": "Ecclesiology", "aliases": ["church"], "description": "Bounded propositions concerning the church, its marks, order, authority, and communion.", "parent_id": null, "provenance": {"basis": "Phase 9 locked core locus"}}
+  ]
+}

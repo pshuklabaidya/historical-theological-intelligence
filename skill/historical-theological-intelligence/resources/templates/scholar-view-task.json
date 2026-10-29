@@ -1,0 +1,406 @@
+{
+  "schema_version": "0.1",
+  "_interface": {
+    "schema_version": "0.1",
+    "source_anchor": "For non-image Scholar View bind representation_id and evidence_id to the actual primary source in source-integrity.json; supply sections.supplied_text exactly, no photographed diplomatic or physical apparatus, and a governed PARTIAL outcome with visible unavailable-image limitations. Image tasks retain exact locus/image and E-SUPPLIED-PAGE binding.",
+    "literal_unicode": "Use literal UTF-8 scholarly text. Do not hand-encode ordinary text with remembered Unicode escape sequences.",
+    "evidence_classes": [
+      "bibliography",
+      "external_authority",
+      "historical_translation",
+      "inference_reconstruction",
+      "other_witness",
+      "supplied_image_observation"
+    ],
+    "identity_states": [
+      "UNIDENTIFIED",
+      "WORK_CANDIDATE",
+      "WORK_ESTABLISHED",
+      "EDITION_ESTABLISHED",
+      "EXEMPLAR_ESTABLISHED"
+    ],
+    "identity_verification_statuses": [
+      "available_not_used",
+      "completed",
+      "not_applicable",
+      "unavailable"
+    ],
+    "identity_evidence_kinds": [
+      "distinctive_phrase_match",
+      "distinctive_running_title",
+      "explicit_author_title",
+      "explicit_imprint_colophon",
+      "full_text_passage",
+      "page_level_text_match",
+      "sequence_match",
+      "textual_bibliographic_match",
+      "verified_dossier_fact"
+    ],
+    "work_identity_evidence_classes": [
+      "bibliography",
+      "other_witness",
+      "supplied_image_observation"
+    ],
+    "identity_contract": {
+      "established_requires": [
+        "name",
+        "evidence_ids",
+        "external_verification"
+      ],
+      "each_identity_evidence_requires": [
+        "identity_admissible: true",
+        "provenance",
+        "discriminating kind"
+      ],
+      "evidence_classes": [
+        "bibliography",
+        "other_witness",
+        "supplied_image_observation"
+      ]
+    },
+    "entity_roles": [
+      "bibliographic_candidate",
+      "external_bibliographic_record",
+      "external_comparator",
+      "historical_name",
+      "historical_source",
+      "other_named_entity",
+      "scripture_reference"
+    ],
+    "entity_scopes": [
+      "external_bibliographic_record",
+      "external_comparator",
+      "historical_source",
+      "other_noncurrent",
+      "page_content",
+      "scripture"
+    ],
+    "entity_role_scopes": {
+      "bibliographic_candidate": [
+        "external_bibliographic_record"
+      ],
+      "external_bibliographic_record": [
+        "external_bibliographic_record"
+      ],
+      "external_comparator": [
+        "external_comparator"
+      ],
+      "historical_name": [
+        "historical_source",
+        "other_noncurrent",
+        "page_content"
+      ],
+      "historical_source": [
+        "historical_source"
+      ],
+      "other_named_entity": [
+        "other_noncurrent"
+      ],
+      "scripture_reference": [
+        "scripture"
+      ]
+    },
+    "entity_contract": {
+      "required": [
+        "entity_id",
+        "role",
+        "scope",
+        "display",
+        "evidence_ids"
+      ],
+      "page_referent_when_display_differs": [
+        "page_token or page_name_form",
+        "identification_status",
+        "identification_evidence_ids when independently_verified"
+      ],
+      "page_referent_field_rule": "explicit_page_name uses page_name_form; independently_verified uses page_token plus identification_evidence_ids; inferred/unresolved use the visible page_token that prompted the inference.",
+      "comparator_requires": [
+        "distinct target_work_id"
+      ]
+    },
+    "witness_statuses": [
+      "completed",
+      "declined",
+      "unavailable"
+    ],
+    "comparator_characterization_contract": {
+      "completed_requires": "witness_comparison.comparisons[]: supplied_text, comparator_text, evidence_id, characterization; the comparator evidence records the exact inspected_passage.",
+      "orthographic_only": "Conservative token equality after case, accent, long-s, u/v, i/j, and ligature normalization; never infer semantic equivalence. An orthography-only claim across a passage requires comparison_scope: entire_claimed_passage, claimed_passage copied from the supplied transcription, and full matching comparator evidence; every comparison must be orthographic_only.",
+      "other_values": [
+        "substantive_difference",
+        "unresolved"
+      ]
+    },
+    "analytical_claim_types": [
+      "feature_function",
+      "foreign_token_gloss",
+      "historical_referent",
+      "page_named_identification",
+      "source_attribution",
+      "textual_reading",
+      "variant_reading",
+      "witness_reading"
+    ],
+    "analytical_claim_statuses": [
+      "inference",
+      "supported",
+      "unresolved"
+    ],
+    "analytical_claim_contract": {
+      "required": [
+        "claim_id",
+        "claim_type",
+        "status",
+        "text",
+        "evidence_ids"
+      ],
+      "textual_reading_requires": [
+        "reading"
+      ],
+      "historical_referent_requires": [
+        "entity_id"
+      ],
+      "foreign_token_gloss_requires": [
+        "token_id"
+      ],
+      "evidence_free_inference_requires": [
+        "basis"
+      ],
+      "entity_markers_in_text": "Supported. Registered {{entity:ENTITY-ID}} markers are resolved before claim validation and recorded as entity_ids.",
+      "claim_marker_semantics": "{{claim:CLAIM-ID}} expands to the full rendered claim text. Use the marker as the claim phrase or sentence, not as a citation after duplicate prose."
+    },
+    "foreign_languages": [
+      "greek",
+      "hebrew"
+    ],
+    "foreign_source_layers": [
+      "comparator",
+      "external_authority",
+      "supplied_page",
+      "supplied_text"
+    ],
+    "foreign_reading_statuses": [
+      "probable",
+      "secure",
+      "uncertain",
+      "unresolved"
+    ],
+    "foreign_gloss_statuses": [
+      "inconsistent",
+      "unresolved",
+      "verified"
+    ],
+    "foreign_language_token_contract": {
+      "required": [
+        "token_id",
+        "language",
+        "form",
+        "source_layer",
+        "reading_status",
+        "reading_evidence_ids"
+      ],
+      "optional_alternate_forms": "alternate_forms may list diacritic-only alternatives for the same underlying letter sequence. They are aliases of one token record, not additional supplied-page witnesses or separate lexemes.",
+      "alternate_form_rule": "Every alternate form must reduce to exactly the same underlying letters as form after Unicode decomposition and removal of combining marks.",
+      "supplied_page_requires": [
+        "reading_evidence_ids includes E-SUPPLIED-PAGE",
+        "checked_against_supplied_image: true"
+      ],
+      "gloss_requires": [
+        "gloss",
+        "gloss_status",
+        "gloss_evidence_ids",
+        "gloss_checked_against_token: true"
+      ],
+      "nonsecure_verified_gloss_requires": [
+        "gloss_preserves_uncertainty: true"
+      ],
+      "evidence_role_rule": "reading_evidence_ids establish form or reading; gloss_evidence_ids establish meaning. Translation evidence may support a gloss but does not establish the supplied-page glyph."
+    },
+    "referent_identification_statuses": [
+      "explicit_page_name",
+      "independently_verified",
+      "inferred",
+      "unresolved"
+    ],
+    "long_s_review_contract": {
+      "reviewed_against_supplied_image": "Set true only after a supplied-image s/f review and after visually adjudicating every item that --prepare-long-s reports as requiring review.",
+      "checklist_file": "Automatically located in the selected task directory; omit this field from long_s_review.",
+      "resolution_values": [
+        "genuine_f",
+        "long_s",
+        "round_s"
+      ],
+      "ownership": "The helper derives token IDs, ordering, normalized pairings, and ordinary resolution categories. Do not hand-populate the checklist.",
+      "workflow": "Run --prepare-long-s. If manual_review_required is nonzero, inspect only those reported cross-layer s/f mismatches against the supplied image, correct diplomatic or normalized text, and rerun. The prepared checklist hashes bind review to the exact diplomatic and normalized Latin. Unrelated non-Latin edits do not invalidate it; a Latin edit requires --prepare-long-s again."
+    },
+    "textual_uncertainty_contract": {
+      "model_authors": "Concrete non-foreign textual uncertainties only; use [] when none are present.",
+      "foreign_reading_status": "Do not restate foreign-token certainty in free prose. The adapter derives a canonical summary from foreign_language_tokens[].reading_status."
+    },
+    "selected_claim_ids_contract": "Identity selection only. Ordinary WORK_ESTABLISHED Scholar View should leave selected_claim_ids empty; the helper adds the work-identity claim automatically. Analytical claims are selected by actual {{claim:CLAIM-ID}} marker use and do not belong in selected_claim_ids.",
+    "analytical_quote_rule": "Quotation marks in analytical sections are reserved for literal supplied-page wording. English glosses or paraphrases should be unquoted or rendered through a licensed analytical claim; the preflight reports all currently detectable quoted-form problems together.",
+    "validation_diagnostics": "Final completion runs an aggregate preflight first and reports independent current blockers together where dependencies permit; fix the reported batch before rerunning.",
+    "rare_book_rule": "Visible features may be described directly. Explicit functional language such as used for, serves as, functions as, keyed to, or cross-referencing must be rendered through a typed feature_function analytical claim. Bibliographical format (folio/quarto/etc.), binding history, provenance, or other non-visible conclusions require separately licensed evidence; apparent physical size does not establish bibliographical format.",
+    "examples": {
+      "evidence": {
+        "evidence_id": "EV-1",
+        "evidence_class": "other_witness",
+        "kind": "full_text_passage",
+        "independence_group": "witness:1",
+        "description": "Inspected comparator passage.",
+        "passage_inspected": true,
+        "inspected_passage": "Exact passage copied from inspected witness."
+      },
+      "entity": {
+        "entity_id": "ENTITY-1",
+        "role": "historical_name",
+        "scope": "other_noncurrent",
+        "display": "Historical Name",
+        "evidence_ids": [
+          "EV-1"
+        ]
+      },
+      "foreign_language_token": {
+        "token_id": "FT-1",
+        "language": "greek",
+        "form": "ἀλλά",
+        "source_layer": "supplied_page",
+        "reading_status": "secure",
+        "reading_evidence_ids": [
+          "E-SUPPLIED-PAGE"
+        ],
+        "checked_against_supplied_image": true,
+        "gloss": "rather",
+        "gloss_status": "verified",
+        "gloss_evidence_ids": [
+          "EV-1"
+        ],
+        "gloss_checked_against_token": true
+      },
+      "analytical_claim": {
+        "claim_id": "CLAIM-1",
+        "claim_type": "witness_reading",
+        "status": "supported",
+        "text": "The inspected comparator has the same reading.",
+        "evidence_ids": [
+          "EV-1"
+        ]
+      }
+    },
+    "publication_contract": {
+      "schema": "hti-publication-contract-1",
+      "mandatory": true,
+      "review": "Carry actual distinct-pass attestation; the adapter never invents review.",
+      "entities": "Resolve names in the reviewed payload and bind entity_ids; standalone entities never license a sentence.",
+      "passage_marker": "{{assertion:ASSERTION-ID}}",
+      "terminal": "DESIGN_R_PUBLISHER_SELECTED / RELAY_COMMITTED_RESPONSE_AND_STOP; one bound Read only in READ_COMMITTED_FILE mode",
+      "retained_scope": "Research delta retains source accounting and publishes selected material only."
+    },
+    "markers": {
+      "entity": "{{entity:ENTITY-ID}}",
+      "claim": "{{claim:CLAIM-ID}}",
+      "assertion": "{{assertion:ASSERTION-ID}}"
+    }
+  },
+  "work_id": "WORK-ID",
+  "translation": "Complete English translation of the supplied page.",
+  "identity": {
+    "state": "UNIDENTIFIED",
+    "name": null,
+    "external_verification": "not_applicable",
+    "evidence_ids": [],
+    "aliases": []
+  },
+  "evidence": [],
+  "claims": [],
+  "selected_claim_ids": [],
+  "sections": {
+    "rare_book_notes": [
+      "Bounded visible-page description."
+    ],
+    "diplomatic_latin": [
+      "Diplomatic Latin preserving visible long s and genuine f."
+    ],
+    "normalized_latin": [
+      "Normalized Latin kept distinct from the printed reading."
+    ],
+    "textual_uncertainties": [],
+    "witness_comparison": [],
+    "source_notes": [],
+    "theological_loci": [
+      "Theological loci supported by the supplied page."
+    ],
+    "exegetical_method": [
+      "Exegetical method supported by the supplied page."
+    ],
+    "notes": []
+  },
+  "witness_comparison": {
+    "status": "unavailable",
+    "evidence_ids": [],
+    "limitation": "No independent comparator could be inspected after the attempted research route.",
+    "comparisons": [],
+    "claimed_passage": ""
+  },
+  "foreign_language_tokens": [],
+  "analytical_claims": [],
+  "entities": [],
+  "long_s_review": {
+    "reviewed_against_supplied_image": false
+  },
+  "witness_variants": [],
+  "legibility_regions": [],
+  "transcription_spans": [],
+  "direct_reuse_claims": [],
+  "textual_relationships": [],
+  "full_text_escalations": [],
+  "identity_hypotheses": [],
+  "orientation": {
+    "status": "unknown",
+    "label": null,
+    "evidence_ids": []
+  },
+  "provenance": {
+    "status": "unknown",
+    "claim": null,
+    "evidence_ids": []
+  },
+  "locus": {
+    "page_id": null,
+    "image_sha256": null
+  },
+  "confidence": "Overall confidence: high.",
+  "publication_contract": {
+    "schema": "hti-publication-contract-1",
+    "task_directory": "",
+    "publication_id": "",
+    "request_sha256": "",
+    "work_id": "WORK-ID",
+    "operation_plan_sha256": "",
+    "assertions": [],
+    "derivations": [],
+    "outcomes": [],
+    "anchors": [],
+    "discoveries": [],
+    "research_plan": [],
+    "scope": {
+      "mode": "FULL",
+      "assertion_ids": [],
+      "source_bindings": [],
+      "domain_outputs": [],
+      "outcome_ids": [],
+      "retained": [],
+      "translation_requirement": "FULL",
+      "required_source_bindings": []
+    },
+    "terminal": {
+      "preparation_reviewed": false,
+      "delivery": "DESIGN_R_PUBLISHER_SELECTED",
+      "success_continuation": "RELAY_COMMITTED_RESPONSE_AND_STOP",
+      "post_success_actions": [
+        "ONE_BOUND_READ_IF_READ_COMMITTED_FILE"
+      ]
+    }
+  },
+  "source_anchor": null
+}

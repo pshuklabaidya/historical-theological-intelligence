@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidate_version",
+    "kernel_api",
+    "modules",
+    "state_objects",
+    "operations",
+    "domain_fields",
+    "validator_dispatch_order",
+    "conditional_predicates"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "candidate_version": {
+      "type": "string"
+    },
+    "kernel_api": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "object"
+    },
+    "state_objects": {
+      "type": "object"
+    },
+    "operations": {
+      "type": "object"
+    },
+    "domain_fields": {
+      "type": "object"
+    },
+    "validator_dispatch_order": {
+      "type": "array"
+    },
+    "conditional_predicates": {
+      "type": "object"
+    }
+  }
+}

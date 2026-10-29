@@ -1,0 +1,495 @@
+{
+  "schema_version": "hti-capability-contract-1",
+  "module_id": "textual",
+  "version": "0.3-composable-rearchitecture-candidate.1",
+  "kernel_api": "1",
+  "may_publish": false,
+  "operations": {
+    "TRANSLATE": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:TRANSLATE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "SOURCE_SPAN",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/core-workflow.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "SCHOLARLY_TRANSLATE": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:SCHOLARLY_TRANSLATE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "SOURCE_SPAN",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md",
+        "capabilities/textual/scholar-output.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "TRANSCRIBE_DIPLOMATIC": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:TRANSCRIBE_DIPLOMATIC"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "SOURCE_SPAN",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "SUPPLIED_IMAGE",
+          "on_absent": "UNRESOLVED_NO_VISUAL_CLAIMS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "NORMALIZE_LATIN": {
+      "owner": "textual",
+      "requires_operations": [
+        "TRANSCRIBE_DIPLOMATIC"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:NORMALIZE_LATIN"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "SOURCE_SPAN",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "COMPARE_WITNESSES": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:COMPARE_WITNESSES"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "RECONSTRUCT_PAGE_ORDER": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:RECONSTRUCT_PAGE_ORDER"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "SUPPLIED_IMAGE",
+          "on_absent": "UNRESOLVED_NO_VISUAL_CLAIMS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ANALYZE_RARE_BOOK": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:ANALYZE_RARE_BOOK"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "SUPPLIED_IMAGE",
+          "on_absent": "UNRESOLVED_NO_VISUAL_CLAIMS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ANALYZE_MARGINALIA": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:ANALYZE_MARGINALIA"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "SUPPLIED_IMAGE",
+          "on_absent": "UNRESOLVED_NO_VISUAL_CLAIMS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "BUILD_SCRIPTURE_APPARATUS": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:BUILD_SCRIPTURE_APPARATUS"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ANALYZE_ORIGINAL_LANGUAGE": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:ANALYZE_ORIGINAL_LANGUAGE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ANALYZE_EXEGETICAL_METHOD": {
+      "owner": "textual",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:ANALYZE_EXEGETICAL_METHOD"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "BUILD_PASTORAL_STUDY": {
+      "owner": "textual",
+      "requires_operations": [
+        "TRANSLATE"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:BUILD_PASTORAL_STUDY"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/textual/instructions.md",
+        "references/translation-task.md",
+        "references/typography-and-transcription.md",
+        "references/image-processing.md",
+        "references/scholar-view.md",
+        "references/rare-book-evidence.md",
+        "references/witnesses-and-collation.md",
+        "references/scripture-and-original-languages.md",
+        "references/pastoral-study.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    }
+  },
+  "instructions": [
+    "capabilities/textual/instructions.md",
+    "references/translation-task.md",
+    "references/typography-and-transcription.md",
+    "references/image-processing.md",
+    "references/scholar-view.md",
+    "references/rare-book-evidence.md",
+    "references/witnesses-and-collation.md",
+    "references/scripture-and-original-languages.md",
+    "references/pastoral-study.md"
+  ],
+  "contract": "registry/contracts/textual.json",
+  "code_paths": [
+    "scripts/collate.py",
+    "scripts/image_tools.py",
+    "scripts/search_witness.py"
+  ]
+}

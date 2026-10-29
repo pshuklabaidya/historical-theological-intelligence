@@ -1,0 +1,51 @@
+# Proposition ownership and body coverage
+
+Use the `argument_integrity` extension in the task's existing `source-integrity.json`. Ordinary translation fills coverage; it does not require proposition extraction. Argument analysis fills the same coverage and adds ownership records and native PRG bindings. A bare question with no supplied or inspected source content retains the empty extension. Existing task contract 1/2 remains usable on Continue; new tasks use contract 3. Both completion helpers perform this operation through their shared publisher.
+
+Read `python3 scripts/source_integrity.py argument-interface` for the exact field vocabulary. These records remain internal unless requested. Consequential uncertainty and omissions appear in the canonical response's uncertainty or notes fields, without an additional report after completion.
+
+## Body inventory and dispositions
+
+Inventory each meaningful source-body block before translating. Every MAIN_BODY region in an image has at least one source span; do not create an empty image inventory and claim completeness. Retain separate spans for discourse boundaries and relevant embedded scripts. The source inventory is governed by the supplied page, not by the target prose's apparent fluency.
+
+Create a coverage_scope with id and representation_id for each supplied root used in the answer. Account for each MAIN_BODY span once. Every coverage row has id, scope_id, source_span_id, source_class, status and targets. A target is a source binding with representation_id, nonempty span_ids and snapshot. Obtain its hash with the existing `snapshot` command. Its ancestry reaches the accounted source span, and its target text appears in the helper-rendered response.
+
+Use REPRESENTED, NON_PROPOSITIONAL_RETAINED, QUOTATION or INTERLOCUTOR_MATERIAL for material actually represented. An intentionally excluded paratext row is PARATEXT_EXCLUDED, with an explicit reason and no false MAIN_BODY reclassification. Page furniture is not missing body material. OBSCURED, LOST, UNCERTAIN, INTENTIONALLY_OMITTED and UNRESOLVED preserve their reason verbatim in the response. These states are accounted for but cannot license complete argument coverage.
+
+Multiple target spans from one body span require split_reason. Repeated material uses DUPLICATE_ACCOUNTED with duplicate_of naming the canonical nonduplicate row and a visible reason. It cannot license another independent argument component. A repetition inside the argument is QUOTATION or REPORTED_SPEECH with repeat_of naming the canonical proposition. Do not mark an omitted span as represented because nearby English reads continuously.
+
+## Speaker and discourse evidence
+
+Each source span may retain a voice object: owner, speaker, role and stance. Printed speaker labels and quotation markers retain their Phase 2 source_class and may carry controls_span_ids referring to body spans in the same representation. Never flatten these apparatus spans into body syntax. An established ownership record binds the controlling apparatus through speaker_evidence, even when the apparatus is outside the proposition's lexical span. Losing that label in OCR or translation cannot promote opponent speech to author doctrine.
+
+Each consequential proposition has a derived EXTRACTED_PROPOSITION representation with direct parents, source spans and the existing layer-scoped PROPOSITION_OWNERSHIP review. Its ownership record contains id, representation_id, owner, speaker, role, stance, status, speaker_evidence and snapshot. UNKNOWN/UNRESOLVED remain available; include uncertainty rather than guessing. Secure ownership cannot escape raw-OCR quarantine or unresolved source risk.
+
+Owners are AUTHOR, OPPONENT, QUOTED_AUTHORITY, SCRIPTURE, EDITORIAL or UNKNOWN. Roles include AUTHOR_ASSERTION, OPPONENT_ASSERTION, QUOTATION, OBJECTION, CONCESSION, DISTINCTION, REPLY, REJECTION, CONCLUSION, APPLICATION, REPORTED_SPEECH, SCRIPTURE_LEMMA, EDITORIAL_OR_PARATEXTUAL_MATERIAL and UNRESOLVED_VOICE. ASSERTS, REPORTS, REJECTS, QUALIFIES, CONCEDES and UNRESOLVED keep author stance separate from the quoted proposition's content. Concession requires qualification; distinction requires at least two distinction_parts; reply/rejection requires responds_to. Multiple distinct propositions from one source component require split_reason.
+
+Coverage and ownership are independent. A complete translation can still contain unresolved or opponent-owned propositions. A securely owned proposition cannot erase another source block. A translation-derived proposition represents translated sense and cannot license exact original wording.
+
+## Current source bindings and correction
+
+The existing `snapshot` operation returns the combined snapshot and optional span_snapshots. Retain both on a multi-span parent link. Individual span bindings allow an unchanged proposition from a shared translation to remain valid after a correction to its sibling. They never strengthen the source's evidence license. For a single-span parent the combined binding remains sufficient.
+
+Use zero hashes only during construction; they remain stale until reviewed. Fill coverage targets and apparatus bindings first, then obtain `proposition-snapshot --representation PROPOSITION-ID`, `coverage-snapshot --representation SCOPE-ID` and `consumer-snapshot --representation CONSUMER-ID`. Each operation also takes `--state-dir "$HTI_STATE_DIR"`. Save the returned hash to the corresponding record or dependency only after reviewing the current source state. Ordinary source snapshot commands remain available while the ownership extension is being assembled.
+
+After a correction run `affected-argument --representation SOURCE-ID --spans SPAN-ID ...`. It reports affected propositions, coverage scopes and consumers. The audit also reports stale propositions and consumers. Changed source text, negation, modality, qualifier, speaker evidence or quotation boundaries invalidate only actual dependencies. Restore an omitted block into the inventory and ledger; the argument-completeness claim requires revalidation even if old propositions are unaffected. Recomputing a proposition hash does not cure an unrebound upstream derivation.
+
+## Native PRG and downstream claims
+
+Keep `hti-argument-dossier.json` and `hti-source-registry.json` as the existing native interfaces. Each native proposition has the same ID and content as its ownership record, and source_links use source_span: {span_ids: [...]}. IDs and span IDs must lie in its derivation ancestry. The source registry retains the inherited representation types; extracted propositions are ownership records, not a new legacy source type.
+
+The prg object binds dossier_id and dossier_sha256 to the native dossier. If coverage_complete is true, coverage_snapshots contains every coverage scope's current hash. A restored or corrected block makes an old completeness binding stale. Each native relation has a PRG_RELATION consumer with relation_id, relation_snapshot and both endpoint proposition dependencies. Replies retain a CONTRADICTS, QUALIFIES, DOES_NOT_SUPPORT or INTERPRETS relation to the answered proposition. Distinctions retain a DISTINGUISHES relation between their parts. The inherited logical relation taxonomy remains unchanged and separate from historical and textual-witness relations.
+
+An opponent proposition may be a premise inside an explicitly REPORTED_ARGUMENT; it cannot become an author premise. Quoted authority may support an author inference as AUTHORITY while retaining its own owner. Objections are not conclusions, concessions are not unqualified commitments, and repeated quotations are not independent support.
+
+Consumers record id, kind (CLAIM, PRG_RELATION or ARGUMENT_COMPLETENESS), purpose, status and dependencies. Each dependency has kind (proposition, coverage or consumer), id and the current snapshot. Consumer dependencies are acyclic even when the native PRG contains a legitimate logical cycle. AUTHOR_POSITION requires established, current author assertions in the actual dependency chain. ARGUMENT_COMPLETENESS requires coverage dependencies and represented body spans. EXACT_ORIGINAL_WORDING cannot be licensed by a proposition. A consumer marked REVALIDATION_REQUIRED also makes its descendants noncurrent.
+
+Both helpers validate these records and bind the native dossier bytes in the completion receipt before emitting the final answer. Correct the named structured-input error and retry the same helper when validation fails. No freeform substitute bypasses ownership or completeness.
+
+## Current accountable publication
+
+The common `publication_contract` and response-plan digest in [output templates](output-templates.md) govern this feature's substantive output and selected-operation outcome. A retained result is not fulfillment of a new request. Publish selected current exact projections or reviewed current derivations; disclose a current PARTIAL/UNRESOLVED/BLOCKED reason when a selected operation cannot be completed. Preserve native source, ownership, uncertainty, identity and relation licenses. Unrequested operations remain optional. All research, source inspection, corrections, preparation and progress updates precede the committed response. Design R selects transport from exact UTF-8 bytes: DIRECT_STDOUT at or below 24,000 bytes emits the committed answer and stops with no later tool; READ_COMMITTED_FILE above that ceiling emits a short current-publication path/hash/byte-count stub, followed only by one exact Read with allow_large=true, exact relay and stop. No other post-stub tool, narration, editing or new publication is permitted. Later truthful recovery preserves the same commit and repeats its direct payload or bound stub, never scholarship.
+
+Retain complete body inventory and native ownership/PRG equality even when a research follow-up selects no old source layer for visibility. Current selected spans and their consequential limits must be visible; prior complete substrate remains audited. A materially changed scholarly paraphrase is a distinct reviewed derivation with current parent snapshots, ownership and uncertainty inheritance. It cannot replace the native proposition under its old ID or hash. Unrelated span changes preserve independent derivations; affected parents invalidate current use.

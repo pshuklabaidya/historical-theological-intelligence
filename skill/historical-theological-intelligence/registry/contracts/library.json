@@ -1,0 +1,104 @@
+{
+  "schema_version": "hti-capability-contract-1",
+  "module_id": "library",
+  "version": "0.3-composable-rearchitecture-candidate.1",
+  "kernel_api": "1",
+  "may_publish": false,
+  "operations": {
+    "ONBOARD_SPECIALIZATION": {
+      "owner": "library",
+      "requires_operations": [
+        "IDENTIFY_WORK"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "specialization_onboarding"
+      ],
+      "produces_state": [
+        "result:ONBOARD_SPECIALIZATION"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.specialization_onboarding:validate_completion",
+      "domain": "specialization_onboarding",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/library/instructions.md",
+        "references/specialization-onboarding.md",
+        "references/specialization-core.md",
+        "references/licensed-resources.md",
+        "references/research-state.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "PERSISTENT_STORAGE",
+          "on_absent": "NO_PERSISTENT_STATE_OR_NATIVE_UNBOUND"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "UPDATE_RESEARCH_STATE": {
+      "owner": "library",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:UPDATE_RESEARCH_STATE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/library/instructions.md",
+        "references/specialization-onboarding.md",
+        "references/specialization-core.md",
+        "references/licensed-resources.md",
+        "references/research-state.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "PERSISTENT_STORAGE",
+          "on_absent": "NO_PERSISTENT_STATE_OR_NATIVE_UNBOUND"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    }
+  },
+  "instructions": [
+    "capabilities/library/instructions.md",
+    "references/specialization-onboarding.md",
+    "references/specialization-core.md",
+    "references/licensed-resources.md",
+    "references/research-state.md"
+  ],
+  "contract": "registry/contracts/library.json",
+  "code_paths": [
+    "scripts/hti_core/specialization_onboarding.py",
+    "scripts/research_state.py",
+    "scripts/specialization_core.py",
+    "scripts/specialization_evidence.py",
+    "scripts/specialization_resources.py",
+    "scripts/specialization_storage.py"
+  ]
+}

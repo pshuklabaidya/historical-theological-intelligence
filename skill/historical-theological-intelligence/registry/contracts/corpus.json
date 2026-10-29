@@ -1,0 +1,368 @@
+{
+  "schema_version": "hti-capability-contract-1",
+  "module_id": "corpus",
+  "version": "0.3-composable-post-live-repair.1",
+  "kernel_api": "1",
+  "may_publish": false,
+  "operations": {
+    "MAP_WHOLE_WORK": {
+      "owner": "corpus",
+      "requires_operations": [
+        "BUILD_ARGUMENT_DOSSIER"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "cartography"
+      ],
+      "produces_state": [
+        "result:MAP_WHOLE_WORK"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.cartography:validate_completion",
+      "domain": "cartography",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "MAP_DEVELOPMENT": {
+      "owner": "corpus",
+      "requires_operations": [
+        "MAP_WHOLE_WORK"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "cartography"
+      ],
+      "produces_state": [
+        "result:MAP_DEVELOPMENT"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.cartography:validate_completion",
+      "domain": "cartography",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "COMPARE_WORK_MAPS": {
+      "owner": "corpus",
+      "requires_operations": [
+        "MAP_WHOLE_WORK"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "cartography"
+      ],
+      "produces_state": [
+        "result:COMPARE_WORK_MAPS"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.cartography:validate_completion",
+      "domain": "cartography",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ASSESS_NOVELTY": {
+      "owner": "corpus",
+      "requires_operations": [
+        "BUILD_ARGUMENT_DOSSIER"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "novelty"
+      ],
+      "produces_state": [
+        "result:ASSESS_NOVELTY"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.novelty:validate_completion",
+      "domain": "novelty",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ADJUDICATE_ORIGINALITY": {
+      "owner": "corpus",
+      "requires_operations": [
+        "ASSESS_NOVELTY"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "novelty"
+      ],
+      "produces_state": [
+        "result:ADJUDICATE_ORIGINALITY"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.novelty:validate_completion",
+      "domain": "novelty",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "AUDIT_NOVELTY_LEDGER": {
+      "owner": "corpus",
+      "requires_operations": [
+        "ASSESS_NOVELTY"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "novelty"
+      ],
+      "produces_state": [
+        "result:AUDIT_NOVELTY_LEDGER"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.novelty:validate_completion",
+      "domain": "novelty",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ASSESS_ACCESS_NETWORK": {
+      "owner": "corpus",
+      "requires_operations": [
+        "BUILD_ARGUMENT_DOSSIER"
+      ],
+      "conditional_requires": [
+        {
+          "predicate": "ASSERTS_DEPENDENCE",
+          "operations": [
+            "ASSESS_HISTORICAL_RELATION"
+          ]
+        }
+      ],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "historical_infrastructure"
+      ],
+      "produces_state": [
+        "result:ASSESS_ACCESS_NETWORK"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.historical_infrastructure:validate_completion",
+      "domain": "historical_infrastructure",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "TEST_HISTORICAL_SENSITIVITY": {
+      "owner": "corpus",
+      "requires_operations": [
+        "ASSESS_ACCESS_NETWORK",
+        "ASSESS_HISTORICAL_RELATION"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg",
+        "historical_sensitivity",
+        "historical_infrastructure"
+      ],
+      "produces_state": [
+        "result:TEST_HISTORICAL_SENSITIVITY"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": "hti_core.historical_sensitivity:validate_completion",
+      "domain": "historical_sensitivity",
+      "result_kind": "DOMAIN_OUTPUT",
+      "instructions": [
+        "capabilities/corpus/instructions.md",
+        "references/cartography.md",
+        "references/novelty.md",
+        "references/historical-infrastructure-sensitivity.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    }
+  },
+  "instructions": [
+    "capabilities/corpus/instructions.md",
+    "references/cartography.md",
+    "references/novelty.md",
+    "references/historical-infrastructure-sensitivity.md"
+  ],
+  "contract": "registry/contracts/corpus.json",
+  "code_paths": [
+    "scripts/hti_core/cartography.py",
+    "scripts/hti_core/historical_infrastructure.py",
+    "scripts/hti_core/historical_sensitivity.py",
+    "scripts/hti_core/novelty.py"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "hti-specialization-1",
+  "specialization_id": "SPECIALIZATION-ID",
+  "level": "WORK",
+  "scope": {
+    "work_id": "WORK-ID",
+    "edition_id": null,
+    "exemplar_id": null
+  },
+  "required_identity_state": "WORK_ESTABLISHED",
+  "activation_predicates": [
+    "EXACT_WORK"
+  ],
+  "permitted_surfaces": [
+    "argument_research",
+    "bibliography",
+    "research_index",
+    "source_findings",
+    "terminology",
+    "witness_relations",
+    "work_facts"
+  ],
+  "resources": [],
+  "capabilities": [
+    "READ_LICENSED_STATE",
+    "REVISE_STATE",
+    "EXPORT_STATE"
+  ],
+  "update_rules": {
+    "revision_guard": true,
+    "hard_delete_required": false
+  },
+  "invalidation_dependencies": [],
+  "compatibility": [
+    "hti-specialization-1"
+  ]
+}

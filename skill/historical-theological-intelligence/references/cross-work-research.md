@@ -1,0 +1,7 @@
+# Cross-Work Research
+
+Search only sources registered to the current `work_id` or explicitly selected comparison works. Open a new dossier for each unrelated author or work. Never carry identity candidates, witness preferences, glyph decisions, or source conclusions into the next work.
+
+A table-of-contents or index hit is a lead. Before declaring full text inaccessible, inspect the candidate record for searchable text, OCR, ALTO/XML, downloadable text, IIIF/canvas structure, another digitized exemplar, and alternate repository copies. Record each accessible route and access attempt. One failed route does not end escalation.
+
+Use OCR or searchable text to locate a promising parallel, then inspect the corresponding primary text or image and compare wording before classifying a relation as `direct_reuse`, `quotation`, `close_verbal_parallel`, `paraphrase`, `adaptation`, `loose_verbal_parallel`, `conceptual_parallel`, `related_topic`, or non-reuse. OCR is a locator, not a controlling witness. An index, contents entry, internal cross-reference, source title, snippet, or remembered wording cannot establish either reuse or non-reuse. Record `comparator_passage_inspected: true` or `evidence_level: full_text_compared` with any positive class. If the comparator cannot be inspected after reasonable routes are attempted, retain the lead and classify the relationship as `UNRESOLVED`. Quote minimally and give stable locators.

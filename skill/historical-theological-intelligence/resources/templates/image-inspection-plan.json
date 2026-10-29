@@ -1,0 +1,25 @@
+{
+  "source": "/absolute/path/to/supplied-original.png",
+  "questions": [
+    {
+      "question_id": "Q1",
+      "question": "Which reading is visible in the consequential ambiguous word?",
+      "relevance": "The reading changes the translation.",
+      "regions": [
+        {
+          "region_id": "R1",
+          "reason": "Inspect the word and its immediate context.",
+          "parameters": {
+            "box": [
+              0,
+              0,
+              100,
+              100
+            ],
+            "scale": 2
+          }
+        }
+      ]
+    }
+  ]
+}

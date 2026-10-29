@@ -1,0 +1,37 @@
+{
+  "schema_version": "hti-installed-resource-1",
+  "scope": {
+    "work_id": "WORK-VERMIGLI-JUDGES",
+    "edition_id": "EDITION-VERMIGLI-JUDGES-ZURICH-1561",
+    "exemplar_id": null
+  },
+  "provenance": {
+    "locator": "https://www.e-rara.ch/zuz/content/titleinfo/824916",
+    "evidence_refs": [
+      "ERARA-2537-catalog"
+    ],
+    "verification": "INSPECTED",
+    "stage5_components": [
+      "V13-38d88718255366ce",
+      "V13-b84993ef1d02cc73",
+      "V13-5c1d1a9a021b35b7",
+      "V13-e27169ee44019dd5"
+    ],
+    "caveats": [
+      "Repository bibliography inspected on 2026-10-01. Catalog metadata licenses bibliographic statements, not unseen page readings.",
+      "The Zurich repository copy is an external comparator. Its shelf mark never identifies the supplied physical exemplar.",
+      "No signatures, pagination, variants, typography rules or copy-history claims are preloaded."
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "edition-imprint",
+      "value": "The e-rara record for this 1561 edition attributes the Judges commentary to Pietro Martire Vermigli and records Zurich (Tiguri), Christoph Froschauer, 1561."
+    },
+    {
+      "claim_id": "edition-comparator",
+      "value": "The registered digital comparator is Zentralbibliothek Zürich shelf mark 5.79, DOI 10.3931/e-rara-2537, IIIF https://www.e-rara.ch/i3f/v20/824916/manifest."
+    }
+  ],
+  "assets": []
+}

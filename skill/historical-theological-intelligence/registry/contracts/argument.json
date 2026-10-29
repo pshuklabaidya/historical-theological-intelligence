@@ -1,0 +1,99 @@
+{
+  "schema_version": "hti-capability-contract-1",
+  "module_id": "argument",
+  "version": "0.3-composable-rearchitecture-candidate.1",
+  "kernel_api": "1",
+  "may_publish": false,
+  "operations": {
+    "BUILD_ARGUMENT_DOSSIER": {
+      "owner": "argument",
+      "requires_operations": [],
+      "conditional_requires": [
+        {
+          "predicate": "TRANSLATION_SELECTED",
+          "operations": [
+            "TRANSLATE",
+            "SCHOLARLY_TRANSLATE"
+          ],
+          "selected_only": true
+        }
+      ],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry"
+      ],
+      "produces_state": [
+        "result:BUILD_ARGUMENT_DOSSIER"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "PROPOSITION",
+      "instructions": [
+        "capabilities/argument/instructions.md",
+        "references/argument-architecture.md",
+        "references/dependency-uncertainty.md",
+        "references/loci-and-exegetical-method.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "DETECT_LOCUS": {
+      "owner": "argument",
+      "requires_operations": [
+        "BUILD_ARGUMENT_DOSSIER"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry"
+      ],
+      "produces_state": [
+        "result:DETECT_LOCUS"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/argument/instructions.md",
+        "references/argument-architecture.md",
+        "references/dependency-uncertainty.md",
+        "references/loci-and-exegetical-method.md"
+      ],
+      "external_requirements": [],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    }
+  },
+  "instructions": [
+    "capabilities/argument/instructions.md",
+    "references/argument-architecture.md",
+    "references/dependency-uncertainty.md",
+    "references/loci-and-exegetical-method.md"
+  ],
+  "contract": "registry/contracts/argument.json",
+  "code_paths": [
+    "scripts/hti_core/argument_architecture.py",
+    "scripts/hti_core/dependency_uncertainty.py"
+  ]
+}

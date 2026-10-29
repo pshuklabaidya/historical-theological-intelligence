@@ -1,0 +1,16 @@
+{
+  "schema_version": "hti-source-integrity-1",
+  "work_id": "WORK-ID",
+  "task_directory": "",
+  "representations": [],
+  "risks": [],
+  "uses": [],
+  "output_bindings": [],
+  "argument_integrity": {
+    "coverage_scopes": [],
+    "coverage": [],
+    "propositions": [],
+    "consumers": [],
+    "prg": null
+  }
+}

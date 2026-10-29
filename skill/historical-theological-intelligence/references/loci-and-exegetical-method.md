@@ -1,0 +1,9 @@
+# Loci and Exegetical Method
+
+Identify theological loci only when the passage develops them, not from isolated vocabulary. Cite the Latin trigger and explain the relation in one or two sentences. Typical families include Scripture, God, providence, Christology, sin, grace, justification, sanctification, church, sacraments, civil authority, ethics, and last things.
+
+Describe what the author is doing exegetically: grammatical clarification, textual comparison, harmonization, typology, doctrinal inference, polemic, moral application, historical inquiry, appeal to languages, appeal to authorities, or resolution of objections. Separate description from evaluation and tie each classification to the page.
+
+Distinguish a sustained or headed formal locus, a smaller exegetical question, and running exposition. Record the available beginning and endpoint before treating the passage as a complete locus. An unfinished discussion supports only the direction of the argument in the inspected portion; identify that limit and do not manufacture its final conclusion. Inspect a continuation when it is material and accessible, otherwise preserve the limitation. Page coverage does not establish whole-locus completeness.
+
+Explain how the cited observation supports the proposed exegetical move. An illustration or application of an Old Testament event is not automatically typology: use that label only when the source supplies a type-antitype or comparably discriminating redemptive-historical argument. Preserve the author's actual technical distinctions and qualifications rather than imposing a later confessional binary. Quoted authorities, objections, concessions and replies keep their owners and roles under [proposition integrity](proposition-integrity.md). Method or locus labels cannot promote uncertain text into a secure authorial commitment.

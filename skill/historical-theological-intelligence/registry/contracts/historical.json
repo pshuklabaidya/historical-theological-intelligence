@@ -1,0 +1,281 @@
+{
+  "schema_version": "hti-capability-contract-1",
+  "module_id": "historical",
+  "version": "0.3-composable-rearchitecture-candidate.1",
+  "kernel_api": "1",
+  "may_publish": false,
+  "operations": {
+    "ASSESS_HISTORICAL_RELATION": {
+      "owner": "historical",
+      "requires_operations": [
+        "BUILD_ARGUMENT_DOSSIER"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg"
+      ],
+      "produces_state": [
+        "result:ASSESS_HISTORICAL_RELATION"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "HRG_RELATION_OR_NATIVE_OPERATION_RESULT",
+      "instructions": [
+        "capabilities/historical/instructions.md",
+        "references/historical-relations.md",
+        "references/lineage-traversal.md",
+        "references/source-transmission-forensics.md",
+        "references/reception-conceptual-history.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "TRACE_LINEAGE": {
+      "owner": "historical",
+      "requires_operations": [
+        "ASSESS_HISTORICAL_RELATION"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg"
+      ],
+      "produces_state": [
+        "result:TRACE_LINEAGE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "HRG_RELATION_OR_NATIVE_OPERATION_RESULT",
+      "instructions": [
+        "capabilities/historical/instructions.md",
+        "references/historical-relations.md",
+        "references/lineage-traversal.md",
+        "references/source-transmission-forensics.md",
+        "references/reception-conceptual-history.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ANALYZE_SOURCE_TRANSMISSION": {
+      "owner": "historical",
+      "requires_operations": [
+        "ASSESS_HISTORICAL_RELATION"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg"
+      ],
+      "produces_state": [
+        "result:ANALYZE_SOURCE_TRANSMISSION"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "HRG_RELATION_OR_NATIVE_OPERATION_RESULT",
+      "instructions": [
+        "capabilities/historical/instructions.md",
+        "references/historical-relations.md",
+        "references/lineage-traversal.md",
+        "references/source-transmission-forensics.md",
+        "references/reception-conceptual-history.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ADJUDICATE_IMMEDIATE_SOURCE": {
+      "owner": "historical",
+      "requires_operations": [
+        "ANALYZE_SOURCE_TRANSMISSION"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg"
+      ],
+      "produces_state": [
+        "result:ADJUDICATE_IMMEDIATE_SOURCE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "HRG_RELATION_OR_NATIVE_OPERATION_RESULT",
+      "instructions": [
+        "capabilities/historical/instructions.md",
+        "references/historical-relations.md",
+        "references/lineage-traversal.md",
+        "references/source-transmission-forensics.md",
+        "references/reception-conceptual-history.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "ANALYZE_RECEPTION": {
+      "owner": "historical",
+      "requires_operations": [
+        "ASSESS_HISTORICAL_RELATION"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg"
+      ],
+      "produces_state": [
+        "result:ANALYZE_RECEPTION"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "HRG_RELATION_OR_NATIVE_OPERATION_RESULT",
+      "instructions": [
+        "capabilities/historical/instructions.md",
+        "references/historical-relations.md",
+        "references/lineage-traversal.md",
+        "references/source-transmission-forensics.md",
+        "references/reception-conceptual-history.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "COMPARE_CONCEPTS": {
+      "owner": "historical",
+      "requires_operations": [
+        "BUILD_ARGUMENT_DOSSIER"
+      ],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity",
+        "dossier",
+        "source_registry",
+        "hrg"
+      ],
+      "produces_state": [
+        "result:COMPARE_CONCEPTS"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "HRG_RELATION_OR_NATIVE_OPERATION_RESULT",
+      "instructions": [
+        "capabilities/historical/instructions.md",
+        "references/historical-relations.md",
+        "references/lineage-traversal.md",
+        "references/source-transmission-forensics.md",
+        "references/reception-conceptual-history.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    }
+  },
+  "instructions": [
+    "capabilities/historical/instructions.md",
+    "references/historical-relations.md",
+    "references/lineage-traversal.md",
+    "references/source-transmission-forensics.md",
+    "references/reception-conceptual-history.md"
+  ],
+  "contract": "registry/contracts/historical.json",
+  "code_paths": [
+    "scripts/hti_core/historical_relations.py",
+    "scripts/hti_core/lineage_engine.py",
+    "scripts/hti_core/reception_history.py",
+    "scripts/hti_core/source_transmission.py"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1",
+  "work_id": "WORK-ID",
+  "identity_state": "UNIDENTIFIED",
+  "selected_claim_ids": [],
+  "claims": [],
+  "evidence": [],
+  "competing_candidates": [],
+  "updated_at": null
+}

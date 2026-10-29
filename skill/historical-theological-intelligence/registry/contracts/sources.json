@@ -1,0 +1,175 @@
+{
+  "schema_version": "hti-capability-contract-1",
+  "module_id": "sources",
+  "version": "0.3-composable-rearchitecture-candidate.1",
+  "kernel_api": "1",
+  "may_publish": false,
+  "operations": {
+    "VERIFY_SOURCE": {
+      "owner": "sources",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:VERIFY_SOURCE"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/sources/instructions.md",
+        "references/sources-and-proposition-verification.md",
+        "references/cross-work-research.md",
+        "references/bibliographic-discovery.md",
+        "references/citation.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "IDENTIFY_WORK": {
+      "owner": "sources",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:IDENTIFY_WORK"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/sources/instructions.md",
+        "references/sources-and-proposition-verification.md",
+        "references/cross-work-research.md",
+        "references/bibliographic-discovery.md",
+        "references/citation.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "SEARCH_CROSS_WORK": {
+      "owner": "sources",
+      "requires_operations": [],
+      "conditional_requires": [],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:SEARCH_CROSS_WORK"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/sources/instructions.md",
+        "references/sources-and-proposition-verification.md",
+        "references/cross-work-research.md",
+        "references/bibliographic-discovery.md",
+        "references/citation.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    },
+    "RENDER_CITATION_READY": {
+      "owner": "sources",
+      "requires_operations": [],
+      "conditional_requires": [
+        {
+          "predicate": "ALL_OTHER_SELECTED",
+          "operations": []
+        }
+      ],
+      "requires_state": [
+        "source_integrity"
+      ],
+      "produces_state": [
+        "result:RENDER_CITATION_READY"
+      ],
+      "validator": "source_integrity:validate_current_publication",
+      "additional_validator": null,
+      "domain": null,
+      "result_kind": "GOVERNED_ASSERTION",
+      "instructions": [
+        "capabilities/sources/instructions.md",
+        "references/sources-and-proposition-verification.md",
+        "references/cross-work-research.md",
+        "references/bibliographic-discovery.md",
+        "references/citation.md"
+      ],
+      "external_requirements": [
+        {
+          "kind": "RESEARCH_ACCESS",
+          "on_absent": "UNRESOLVED_WITH_RECORDED_ATTEMPTS"
+        }
+      ],
+      "allowed_outcomes": [
+        "COMPLETED",
+        "PARTIAL",
+        "UNRESOLVED",
+        "BLOCKED"
+      ],
+      "missing_prerequisite": "UNRESOLVED root with governed reason; dependents BLOCKED citing selected prerequisite; independent operations may continue",
+      "schema_version": "hti-operation-contract-1",
+      "module_version": "0.3-composable-rearchitecture-candidate.1",
+      "retained_satisfaction": "Only exact task/work/snapshot/schema/version/currentness validated objects; all native validators still run"
+    }
+  },
+  "instructions": [
+    "capabilities/sources/instructions.md",
+    "references/sources-and-proposition-verification.md",
+    "references/cross-work-research.md",
+    "references/bibliographic-discovery.md",
+    "references/citation.md"
+  ],
+  "contract": "registry/contracts/sources.json",
+  "code_paths": []
+}

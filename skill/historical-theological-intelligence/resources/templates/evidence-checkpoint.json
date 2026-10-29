@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.2",
+  "work_id": "WORK-ID",
+  "identity_state": "UNIDENTIFIED",
+  "selected_claim_ids": [],
+  "identity_hypotheses": [],
+  "orientation": {
+    "status": "unknown",
+    "label": null,
+    "evidence_ids": []
+  },
+  "provenance": {
+    "status": "unknown",
+    "claim": null,
+    "evidence_ids": []
+  },
+  "evidence": [],
+  "claims": [],
+  "witness_variants": [],
+  "legibility_regions": [],
+  "direct_reuse_claims": [],
+  "textual_relationships": [],
+  "full_text_escalations": [],
+  "long_s_audit": {
+    "required": false,
+    "checklist_status": "not_required",
+    "reviewed_against_supplied_image": false,
+    "checks": []
+  },
+  "output": {
+    "stage": "draft",
+    "transcription_mode": "translation",
+    "uncertainties_visible": true,
+    "transcription_spans": [],
+    "identity": {
+      "proposed_identity": null,
+      "identity_state": "UNIDENTIFIED",
+      "claim_id": null,
+      "external_verification": "not_applicable"
+    },
+    "final_response": null,
+    "finalization": null,
+    "critical_claim_audit": {
+      "status": "not_required",
+      "fail_closed": true,
+      "reviewed_categories": []
+    }
+  },
+  "locus": {
+    "page_id": null,
+    "image_sha256": null
+  },
+  "publication_contract": {
+    "schema": "hti-publication-contract-1",
+    "task_directory": "",
+    "publication_id": "",
+    "request_sha256": "",
+    "work_id": "WORK-ID",
+    "operation_plan_sha256": "",
+    "assertions": [],
+    "derivations": [],
+    "outcomes": [],
+    "anchors": [],
+    "discoveries": [],
+    "research_plan": [],
+    "scope": {
+      "mode": "FULL",
+      "assertion_ids": [],
+      "source_bindings": [],
+      "domain_outputs": [],
+      "outcome_ids": [],
+      "retained": [],
+      "translation_requirement": "FULL",
+      "required_source_bindings": []
+    },
+    "terminal": {
+      "preparation_reviewed": false,
+      "delivery": "DESIGN_R_PUBLISHER_SELECTED",
+      "success_continuation": "RELAY_COMMITTED_RESPONSE_AND_STOP",
+      "post_success_actions": [
+        "ONE_BOUND_READ_IF_READ_COMMITTED_FILE"
+      ]
+    }
+  }
+}
